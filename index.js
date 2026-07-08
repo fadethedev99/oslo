@@ -10,14 +10,14 @@ const form  = new FormData();
 form.append('project', zipBlob, 'project.zip');
 
 try {
-    const response = await fetch('http://localhost:3000/deploy', {
+    const response = await fetch('https://oslo-server.onrender.com/deploy', {
         method: 'POST',
         body: form
     });
 
     const resultText = await response.text();
     console.log(resultText);
-    console.log('👉 Website live at: http://localhost:3000'); 
+    console.log('👉 Website live at: https://oslo-server.onrender.com');
     
 } catch (error) {
     console.error('Oslo deployment failed:', error.message);
